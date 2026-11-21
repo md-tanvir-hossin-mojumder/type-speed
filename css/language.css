@@ -1,0 +1,107 @@
+/* ===== language.css : ভাষা বাটন, বাংলা ফন্ট ও লেআউট ===== */
+
+/* ---------- Header: ভাষা বাটন ---------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ui-lang {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.ui-lang-btn {
+  min-width: 44px;
+  height: 40px;
+  padding: 0 12px;
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ui-lang-btn.active {
+  background: var(--gold);
+  color: #1A1405;
+}
+
+/* ---------- Typing Language বাটন ---------- */
+.lang-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lang-note {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--gold-soft);
+}
+
+.custom-count {
+  margin-top: 6px;
+  font-size: 13px;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+/* ---------- বাংলা লেখার জন্য ফন্ট ---------- */
+.passage.bn {
+  font-family: var(--font-bn), sans-serif;
+  font-size: 22px;
+  line-height: 2.1;
+  letter-spacing: 0;
+}
+
+html[lang="bn"] body {
+  font-family: var(--font-bn), var(--font-en);
+}
+
+/* বাংলায় letter-spacing ও বড় হাতের নিয়ম বন্ধ (যুক্তাক্ষর ঠিক রাখতে) */
+html[lang="bn"] .tagline,
+html[lang="bn"] .stat-label,
+html[lang="bn"] .live-stat small,
+html[lang="bn"] .result-item small,
+html[lang="bn"] .sidebar-title,
+html[lang="bn"] .sidebar-label,
+html[lang="bn"] .preview-label,
+html[lang="bn"] .preview-stat small,
+html[lang="bn"] .hero h1 {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[lang="bn"] .hero h1,
+html[lang="bn"] .section h2,
+html[lang="bn"] .card h3 {
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .passage.bn {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .ui-lang-btn {
+    min-width: 38px;
+    padding: 0 8px;
+  }
+
+  .brand-name {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+}

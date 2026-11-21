@@ -1,0 +1,93 @@
+/* ===== achievements.css : Achievement ব্যাজ ও বার্তা ===== */
+
+.badge-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badge-icon {
+  box-sizing: border-box;
+  width: 52px;
+  height: 52px;
+  padding: 12px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.badge-card.locked {
+  opacity: 0.78;
+}
+
+.badge-card.unlocked .badge-icon {
+  color: #FFFFFF;
+  background: var(--purple);
+  border-color: var(--purple);
+  box-shadow: 0 0 18px rgba(137, 87, 213, 0.45);
+}
+
+.badge-card .progress-bar {
+  height: 6px;
+  margin: 4px 0 0;
+}
+
+.badge-card.unlocked .progress-fill {
+  background: linear-gradient(90deg, var(--purple), #B48CF0);
+}
+
+.badge-progress {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.badge-state {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.badge-card.unlocked .badge-state {
+  color: #B48CF0;
+}
+
+.achievement-summary {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--gold-soft);
+}
+
+/* ---------- আনলক বার্তা (টোস্ট) ---------- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  z-index: 90;
+  max-width: 90%;
+  padding: 12px 18px;
+  text-align: center;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--purple);
+  border-radius: 999px;
+  box-shadow: var(--shadow), 0 0 24px rgba(137, 87, 213, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    transition: none;
+  }
+}

@@ -1,0 +1,44 @@
+/* ===== practice.css : Practice Center কার্ড ===== */
+
+.practice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.practice-card .btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.practice-card.daily {
+  border-color: var(--gold);
+  box-shadow: var(--shadow), 0 0 24px rgba(245, 185, 33, 0.12);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.daily-status {
+  font-size: 13px;
+  color: var(--emerald);
+}
+
+.practice-status {
+  min-height: 22px;
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--gold-soft);
+}

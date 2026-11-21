@@ -1,0 +1,259 @@
+/* components.css */
+/* ===== components.css : reusable components ===== */
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 26px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #1A1405;
+  box-shadow: var(--glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--gold-soft);
+}
+
+.btn-outline:hover {
+  background: rgba(214, 179, 90, 0.12);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.card p {
+  color: var(--text-muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card-grid .card {
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.card-grid .card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+/* ---------- Forms ---------- */
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  margin-top: 6px;
+}
+
+textarea:disabled {
+  opacity: 0.55;
+}
+
+label {
+  display: block;
+  margin: 10px 0 4px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ---------- Typing test ---------- */
+.test-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  margin-bottom: 18px;
+}
+
+.test-options label {
+  grid-row: 1;
+}
+
+.test-options select {
+  grid-row: 2;
+}
+
+.live-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.live-stat {
+  padding: 10px 6px;
+  text-align: center;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.live-stat span {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.live-stat small {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progress-bar {
+  height: 8px;
+  margin-bottom: 18px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+  transition: width 0.3s linear;
+}
+
+.passage {
+  min-height: 110px;
+  padding: 18px;
+  margin-bottom: 14px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  font-size: 20px;
+  line-height: 1.9;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+}
+
+.char-correct {
+  color: var(--emerald);
+}
+
+.char-wrong {
+  color: var(--danger);
+  background: rgba(229, 72, 77, 0.18);
+  border-radius: 3px;
+}
+
+.char-current {
+  border-bottom: 2px solid var(--gold);
+  color: var(--text);
+}
+
+.test-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* ---------- Language / tabs ---------- */
+.language-options,
+.tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.lang-btn,
+.tab-btn {
+  min-height: 44px;
+  padding: 8px 22px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.lang-btn.active,
+.tab-btn.active {
+  background: var(--gold);
+  color: #1A1405;
+  border-color: var(--gold);
+}
+
+/* ---------- Lists ---------- */
+#leaderboard-list,
+#history-list {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--text-muted);
+}
+
+/* ---------- Achievement badges ---------- */
+.badge {
+  border-color: rgba(137, 87, 213, 0.4);
+  opacity: 0.6;
+}
+
+.badge.unlocked {
+  opacity: 1;
+  border-color: var(--purple);
+}
+
+/* ---------- Keyboard trainer ---------- */
+#virtual-keyboard {
+  margin-top: 14px;
+  min-height: 60px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Statistics number inside cards ---------- */
+.card .stat-number {
+  font-size: 28px;
+}

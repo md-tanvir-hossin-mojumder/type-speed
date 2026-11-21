@@ -1,0 +1,230 @@
+/* ===== settings.css : Settings, কার্সর/হাইলাইট, Learning Center ===== */
+
+/* ---------- সাইডবারের Settings বাটন ---------- */
+.sidebar-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: #D5D9E2;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-action:hover {
+  background: rgba(245, 185, 33, 0.07);
+  border-color: var(--border);
+}
+
+/* ---------- টাইপিংয়ের লেখার আকার ---------- */
+html[data-fs="small"] .passage {
+  font-size: 16px;
+}
+
+html[data-fs="small"] .passage.bn {
+  font-size: 18px;
+}
+
+html[data-fs="large"] .passage {
+  font-size: 24px;
+}
+
+html[data-fs="large"] .passage.bn {
+  font-size: 26px;
+}
+
+html[data-fs="xlarge"] .passage {
+  font-size: 28px;
+}
+
+html[data-fs="xlarge"] .passage.bn {
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  html[data-fs="small"] .passage {
+    font-size: 15px;
+  }
+
+  html[data-fs="small"] .passage.bn {
+    font-size: 17px;
+  }
+
+  html[data-fs="large"] .passage {
+    font-size: 21px;
+  }
+
+  html[data-fs="large"] .passage.bn {
+    font-size: 23px;
+  }
+
+  html[data-fs="xlarge"] .passage {
+    font-size: 24px;
+  }
+
+  html[data-fs="xlarge"] .passage.bn {
+    font-size: 26px;
+  }
+}
+
+/* ---------- কার্সরের ধরন ---------- */
+html[data-caret="block"] .char-current {
+  background: rgba(245, 185, 33, 0.4);
+  border-bottom: 0;
+  border-radius: 3px;
+}
+
+html[data-caret="line"] .char-current {
+  border-bottom: 0;
+  box-shadow: -2px 0 0 var(--gold);
+}
+
+html[data-caret="none"] .char-current {
+  border-bottom: 0;
+}
+
+/* ---------- হাইলাইটের ধরন ---------- */
+html[data-hl="background"] .char-correct {
+  color: var(--text);
+  background: rgba(32, 180, 134, 0.25);
+  border-radius: 3px;
+}
+
+html[data-hl="mistakes"] .char-correct {
+  color: var(--text);
+}
+
+/* ---------- Settings প্যানেল ---------- */
+.settings-modal .seg-row {
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.settings-modal .seg-btn {
+  flex: 1 1 40%;
+  min-width: 96px;
+  padding: 0 10px;
+}
+
+.settings-modal .modal-body h4:first-child {
+  margin-top: 4px;
+}
+
+.settings-preview {
+  min-height: 0;
+  max-height: none;
+  margin: 8px 0 0;
+}
+
+.settings-modal .modal-actions {
+  margin-top: 20px;
+}
+
+/* ---------- Learning Center ---------- */
+.learn-group {
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.learn-group > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  font-size: 20px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.learn-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.learn-group > summary::after {
+  flex-shrink: 0;
+  content: "+";
+  font-size: 24px;
+  color: var(--gold);
+}
+
+.learn-group[open] > summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.learn-group[open] > summary::after {
+  content: "\2212";
+}
+
+.learn-body {
+  padding: 14px 18px 18px;
+}
+
+.learn-body h4 {
+  margin: 18px 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.learn-body h4:first-of-type {
+  margin-top: 8px;
+}
+
+.learn-body ol,
+.learn-body ul {
+  margin: 6px 0 10px;
+  padding-left: 22px;
+}
+
+.learn-body li {
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+.learn-body .btn {
+  margin-top: 6px;
+}
+
+.learn-note {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.faq-item {
+  margin-bottom: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.faq-item > summary {
+  padding: 12px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 14px 12px;
+}
+
+@media (max-width: 768px) {
+  .learn-group > summary {
+    font-size: 18px;
+  }
+}

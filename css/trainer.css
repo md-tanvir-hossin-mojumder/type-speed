@@ -1,0 +1,289 @@
+/* ===== trainer.css : Keyboard Trainer ===== */
+
+/* ---------- আঙুলের রঙ ---------- */
+.f-pinky {
+  --vk-color: #8957D5;
+}
+
+.f-ring {
+  --vk-color: #5577E8;
+}
+
+.f-middle {
+  --vk-color: #20B486;
+}
+
+.f-index {
+  --vk-color: #D6B35A;
+}
+
+.f-thumb {
+  --vk-color: #A8AFBD;
+}
+
+/* ---------- Virtual Keyboard ---------- */
+.vk-board {
+  margin: 16px 0 8px;
+  padding: 12px 8px 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.vk-row {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.vk-row-0 {
+  margin-left: 0;
+}
+
+.vk-row-1 {
+  margin-left: 1.5%;
+}
+
+.vk-row-2 {
+  margin-left: 3%;
+}
+
+.vk-row-3 {
+  margin-left: 4.5%;
+}
+
+.vk-space {
+  margin-left: 20%;
+}
+
+.vk {
+  position: relative;
+  flex: 0 0 8.6%;
+  min-height: 42px;
+  margin-right: 0.8%;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--vk-color, var(--border));
+  border-bottom-width: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.vk-space .vk {
+  flex: 0 0 60%;
+}
+
+.vk.bump::after {
+  content: "";
+  position: absolute;
+  right: 30%;
+  bottom: 5px;
+  left: 30%;
+  height: 2px;
+  background: var(--vk-color);
+  border-radius: 2px;
+}
+
+.vk.target {
+  color: #1A1405;
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 14px rgba(245, 185, 33, 0.7);
+  transform: translateY(-1px);
+}
+
+.vk.ok {
+  color: #06251C;
+  background: var(--emerald);
+}
+
+.vk.wrong {
+  color: #FFFFFF;
+  background: var(--danger);
+}
+
+.vk.row-hl {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.trainer-info {
+  min-height: 22px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--gold-soft);
+}
+
+/* ---------- Practice ---------- */
+.tr-target {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 14px 0;
+}
+
+.tr-char {
+  display: grid;
+  min-width: 72px;
+  height: 72px;
+  padding: 0 12px;
+  place-items: center;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--gold);
+  background: var(--surface-2);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+}
+
+.tr-finger {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.tr-seq {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-height: 32px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tr-seq span {
+  min-width: 22px;
+  padding: 2px 4px;
+  text-align: center;
+  color: var(--text-muted);
+  border-radius: 6px;
+}
+
+.tr-seq .done {
+  color: var(--emerald);
+}
+
+.tr-seq .cur {
+  color: #1A1405;
+  background: var(--gold);
+}
+
+.tr-msg {
+  min-height: 22px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--emerald);
+}
+
+#tr-input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.trainer-tip {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* ---------- Finger Guide ও Layout Guide ---------- */
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.legend-dot {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  background: var(--vk-color);
+  border-radius: 50%;
+}
+
+.legend-item strong {
+  display: block;
+}
+
+.legend-item small {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.guide-title {
+  margin: 16px 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tip-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tip-list li {
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+.layout-item {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 12px;
+  font-family: inherit;
+  text-align: left;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.layout-item.active {
+  border-color: var(--gold);
+}
+
+.layout-item strong {
+  display: block;
+}
+
+.layout-item code {
+  display: block;
+  margin: 2px 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+.layout-item small {
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk {
+    transition: none;
+  }
+}

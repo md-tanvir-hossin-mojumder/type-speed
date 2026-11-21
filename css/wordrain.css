@@ -1,0 +1,103 @@
+/* ===== wordrain.css : Word Rain গেম ===== */
+
+.wordrain-card {
+  margin-top: 16px;
+}
+
+.wr-options {
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+.wr-field {
+  position: relative;
+  height: 260px;
+  margin: 12px 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--surface-2), #101013);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+/* নিচের লাল রেখা: শব্দ এখানে পৌঁছালে মিস হয় */
+.wr-field::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--danger);
+  box-shadow: 0 0 12px rgba(229, 72, 77, 0.7);
+}
+
+.wr-field.hit {
+  animation: wrHit 0.3s ease-out;
+}
+
+@keyframes wrHit {
+  0% {
+    box-shadow: inset 0 0 0 3px var(--danger);
+  }
+  100% {
+    box-shadow: inset 0 0 0 0 transparent;
+  }
+}
+
+.wr-word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--gold-soft);
+  border-radius: 999px;
+}
+
+/* যে অক্ষরগুলো টাইপ হয়েছে সেগুলো সোনালি */
+.wr-ch.on {
+  color: var(--gold);
+}
+
+/* যে শব্দটা মিলছে তার বর্ডার জ্বলে */
+.wr-word.target {
+  border-color: var(--gold);
+  box-shadow: var(--glow);
+}
+
+.wr-word.pop {
+  animation: wrPop 0.25s ease-out forwards;
+}
+
+@keyframes wrPop {
+  to {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+#wr-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 18px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+#wr-input.wr-bad {
+  border-color: var(--danger);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wr-field.hit,
+  .wr-word.pop {
+    animation: none;
+  }
+}

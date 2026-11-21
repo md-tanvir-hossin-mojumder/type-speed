@@ -1,0 +1,391 @@
+/* ===== polish.css : ডিজাইন ও অ্যানিমেশন আরও সুন্দর করা ===== */
+
+/* ---------- সাধারণ ছোট পালিশ ---------- */
+html {
+  scrollbar-color: #4a4122 #0A0A0C;
+  scrollbar-width: thin;
+}
+
+::selection {
+  color: #FFFFFF;
+  background: rgba(245, 185, 33, 0.35);
+}
+
+a,
+button,
+select,
+summary {
+  -webkit-tap-highlight-color: rgba(245, 185, 33, 0.15);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B3420;
+  border: 2px solid #0A0A0C;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A4F2B;
+}
+
+/* ---------- হেডার ---------- */
+.site-header {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.site-header.scrolled {
+  border-bottom-color: rgba(214, 179, 90, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- বাটন ---------- */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-gold {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 0 28px rgba(245, 185, 33, 0.55);
+}
+
+.btn-gold:hover::after {
+  left: 130%;
+}
+
+.btn:disabled::after {
+  display: none;
+}
+
+.btn-gold:disabled:hover {
+  box-shadow: none;
+}
+
+/* ফোনে হোভার আটকে থাকে, তাই বন্ধ */
+@media (hover: none) {
+  .btn:hover {
+    transform: none;
+  }
+
+  .btn-gold::after {
+    display: none;
+  }
+}
+
+/* ---------- কার্ড ---------- */
+.card {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .card-grid .card:hover {
+    border-color: var(--gold);
+    box-shadow: var(--shadow), 0 0 22px rgba(245, 185, 33, 0.14);
+  }
+}
+
+/* ---------- টাইপিংয়ের অক্ষর ও প্রোগ্রেস বার ---------- */
+.passage span {
+  transition: color 0.08s ease, background-color 0.08s ease;
+}
+
+.progress-fill {
+  box-shadow: 0 0 10px rgba(245, 185, 33, 0.5);
+}
+
+/* ---------- Hero-র পেছনের আভা ---------- */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  z-index: 0;
+  width: 520px;
+  height: 520px;
+  margin-left: -260px;
+  background: radial-gradient(circle, rgba(245, 185, 33, 0.18), transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner,
+.feature-strip {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- ওপরের স্ক্রল রেখা ও "ওপরে যাও" বাটন ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 80;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  place-items: center;
+  color: #1A1405;
+  background: var(--gold);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: var(--shadow), var(--glow);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.to-top svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- অ্যানিমেশন (শুধু যাদের "অ্যানিমেশন কমাও" চালু নেই) ---------- */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes glowDrift {
+  from {
+    transform: translate(-80px, 0) scale(1);
+  }
+  to {
+    transform: translate(80px, 40px) scale(1.15);
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes wrIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* পেজ খোলার সময় Hero-র লেখা একটার পর একটা */
+  .hero-content > * {
+    animation: riseIn 0.6s ease both;
+  }
+
+  .hero-content > *:nth-child(2) {
+    animation-delay: 0.08s;
+  }
+
+  .hero-content > *:nth-child(3) {
+    animation-delay: 0.16s;
+  }
+
+  .hero-content > *:nth-child(4) {
+    animation-delay: 0.24s;
+  }
+
+  .hero-content > *:nth-child(5) {
+    animation-delay: 0.32s;
+  }
+
+  .hero::before {
+    animation: glowDrift 14s ease-in-out infinite alternate;
+  }
+
+  .hero-visual {
+    animation: floatY 6s ease-in-out infinite;
+  }
+
+  /* স্ক্রলে সেকশন ধীরে ধীরে ফুটে ওঠা */
+  .js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .js-reveal .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .section h2::after {
+    transition: width 0.5s ease 0.2s;
+  }
+
+  .js-reveal .section.reveal:not(.in) h2::after {
+    width: 0;
+  }
+
+  /* ফলাফল কার্ড ও প্যানেল */
+  .results-card:not([hidden]) {
+    animation: popIn 0.35s ease-out;
+  }
+
+  .modal:not([hidden]) .modal-panel {
+    animation: popIn 0.25s ease-out;
+  }
+
+  .modal:not([hidden]) .modal-backdrop {
+    animation: fadeIn 0.25s ease-out;
+  }
+
+  /* ফোনের মেনু খোলার সময় আইটেম একটার পর একটা */
+  .sidebar.open .profile-card,
+  .sidebar.open .sidebar-action,
+  .sidebar.open .sidebar-nav a {
+    animation: slideInLeft 0.35s ease both;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(1) {
+    animation-delay: 0.04s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(2) {
+    animation-delay: 0.07s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(4) {
+    animation-delay: 0.13s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(5) {
+    animation-delay: 0.16s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(6) {
+    animation-delay: 0.19s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(7) {
+    animation-delay: 0.22s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(8) {
+    animation-delay: 0.25s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(9) {
+    animation-delay: 0.28s;
+  }
+
+  .sidebar.open .sidebar-nav a:nth-child(10) {
+    animation-delay: 0.31s;
+  }
+
+  /* Word Rain: শব্দ ছোট থেকে বড় হয়ে আসে */
+  .wr-word {
+    animation: wrIn 0.3s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .to-top,
+  .btn,
+  .card {
+    transition: none;
+  }
+}

@@ -1,0 +1,104 @@
+/* ===== analytics.css : Statistics / Analytics Dashboard ===== */
+
+#analytics-root .card-grid,
+#analytics-root > .card {
+  margin-bottom: 16px;
+}
+
+.chart-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: 170px;
+  margin: 8px 0 20px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.chart:last-of-type {
+  margin-bottom: 0;
+}
+
+.empty-note {
+  color: var(--text-muted);
+}
+
+/* ---------- Performance Improvement ---------- */
+.improve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.improve-item {
+  padding: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.improve-item small {
+  color: var(--text-muted);
+}
+
+.improve-item strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 22px;
+  color: var(--text-muted);
+}
+
+.improve-item.pos strong {
+  color: var(--emerald);
+}
+
+.improve-item.neg strong {
+  color: var(--danger);
+}
+
+.improve-note {
+  font-size: 13px;
+}
+
+/* ---------- History ---------- */
+.history-list {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.history-item {
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.history-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.history-main strong {
+  color: var(--gold);
+}
+
+.history-main span {
+  color: var(--emerald);
+  font-weight: 600;
+}
+
+.history-meta {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-muted);
+}

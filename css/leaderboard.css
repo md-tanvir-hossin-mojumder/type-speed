@@ -1,0 +1,102 @@
+/* ===== leaderboard.css : Local / Demo Leaderboard ===== */
+
+.lb-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.lb-rank {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+}
+
+.lb-row:first-child .lb-rank {
+  background: var(--gold);
+  color: #1A1405;
+}
+
+.lb-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.lb-info strong {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.lb-info small {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.lb-badge {
+  padding: 1px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.lb-row.you {
+  border-color: var(--gold);
+  background: rgba(245, 185, 33, 0.08);
+}
+
+.lb-row.you .lb-badge {
+  color: #1A1405;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.lb-row.demo {
+  border-style: dashed;
+  opacity: 0.85;
+}
+
+.lb-score {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.lb-score b {
+  display: block;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--gold);
+}
+
+.lb-score span {
+  font-size: 12px;
+  color: var(--emerald);
+}
+
+.lb-foot p {
+  margin-top: 6px;
+  font-size: 13px;
+}

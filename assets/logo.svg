@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" width="360" height="64" role="img" aria-label="Type Speed.com">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0A0A0C" stroke="#F5B921" stroke-width="3" />
+  <text x="32" y="43" text-anchor="middle" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="800" font-size="28" fill="#F5B921">TS</text>
+  <text x="78" y="30" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="700" font-size="24" letter-spacing="3" fill="#F8FAFC">TYPE SPEED.COM</text>
+  <text x="78" y="52" font-family="Inter, Arial, Helvetica, sans-serif" font-weight="500" font-size="13" letter-spacing="1.5" fill="#D6B35A">Type Faster. Think Better.</text>
+</svg>
